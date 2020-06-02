@@ -36,9 +36,9 @@ if(NOT USE_CPPRESTSDK)
 else()
   if(OPENSSL_FOUND)
     message("--   OpenSSL")
-    target_link_libraries(signalrclient pthread ${CPPREST_LIB} boost_system boost_chrono boost_thread ${OPENSSL_LIBRARIES})
+    target_link_libraries(signalrclient pthread /usr/local/lib/libcpprest.so ${Boost_LIBRARIES} ${OPENSSL_LIBRARIES})
   else()
-    target_link_libraries(signalrclient pthread ${CPPREST_LIB} boost_system boost_chrono boost_thread)
+    target_link_libraries(signalrclient pthread /usr/local/lib/libcpprest.so ${Boost_LIBRARIES})
   endif()
 endif() # USE_CPPRESTSDK
 
